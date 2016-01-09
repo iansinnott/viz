@@ -4,14 +4,14 @@ import { Route, IndexRoute } from 'react-router';
 import {
   App,
   Home,
-  About,
+  Css,
   NotFound,
 } from './components';
 
 export const routes = (
   <Route path='/' title='App' component={App}>
     <IndexRoute component={Home} />
-    <Route path='about' title='App - About' component={About} />
+    <Route path='css' title='CSS Visualizations' component={Css} />
     <Route path='*' title='404: Not Found' component={NotFound} />
   </Route>
 );

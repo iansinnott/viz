@@ -1,38 +1,26 @@
 import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 import 'normalize.css';
+import 'react-fa';
 
 // TDOO: Add font awesome
 
 import s from './App.styl';
-import logo from './react-logo.png';
 
 // Favicon link is created server-side, this just makes webpack package it
 import './favicon.ico';
 
-export const About = props => (
-  <div className={s.page}>
-    <div className={s.siteTitle}>
-      <h1>About</h1>
-    </div>
-    <p>Welcome, to about us.</p>
-  </div>
-);
-
-export const Home = props => (
-  <div className={s.page}>
-    <div className={s.siteTitle}>
-      <img src={logo} alt='React Logo' />
-      <h1>React Static Boilerplate</h1>
-    </div>
-    <p>Why React static?</p>
-    <ul>
-      <li><span className={s.hl}>Dev</span> friendly</li>
-      <li><span className={s.hl}>User</span> friendly</li>
-      <li><span className={s.hl}>SEO</span> friendly</li>
-    </ul>
-  </div>
-);
+export const Home = React.createClass({
+  render() {
+    return (
+      <div className={s.page}>
+        <div className={s.heading}>
+          <h1>Visualizations</h1>
+        </div>
+      </div>
+    );
+  },
+});
 
 export const NotFound = props => (
   <div className={s.page}>
@@ -54,7 +42,7 @@ export const App = React.createClass({
       <div className={s.App}>
         <nav className={s.nav}>
           <IndexLink to='/' activeClassName={s.active}>Home</IndexLink>
-          <Link to='/about' activeClassName={s.active}>About</Link>
+          <Link to='/css' activeClassName={s.active}>CSS</Link>
         </nav>
         {this.props.children}
       </div>
