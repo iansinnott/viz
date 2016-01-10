@@ -3,9 +3,8 @@ import { IndexLink, Link } from 'react-router';
 import 'normalize.css';
 import 'react-fa';
 
-// TDOO: Add font awesome
-
 import s from './App.styl';
+import { moji } from '../lib/utils.js';
 
 // Favicon link is created server-side, this just makes webpack package it
 import './favicon.ico';
@@ -16,6 +15,11 @@ export const Home = React.createClass({
       <div className={s.page}>
         <div className={s.heading}>
           <h1>Visualizations</h1>
+          <p>
+            This is an experiment in learning more about building visualizations
+            in with various web technologies. Also React, just because.
+            {moji(':sunglasses:')}
+          </p>
         </div>
       </div>
     );
