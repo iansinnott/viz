@@ -43,6 +43,8 @@ export const App = React.createClass({
         <nav className={s.nav}>
           <IndexLink to='/' activeClassName={s.active}>Home</IndexLink>
           <Link to='/css' activeClassName={s.active}>CSS</Link>
+          <Link to='/svg' activeClassName={s.active}>SVG</Link>
+          <Link to='/canvas' activeClassName={s.active}>Canvas</Link>
         </nav>
         {this.props.children}
       </div>
