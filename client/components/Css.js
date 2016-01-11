@@ -61,13 +61,15 @@ export const Css = React.createClass({
               height={240}
               src='https://placeimg.com/320/240/any' />
           </div>
-          <div
-            className={cx(s.keyframe, { [s.keyspin]: keyspin })}
-            onClick={() => this.handleClick('keyspin')}>
-            <img
-              width={320}
-              height={240}
-              src='https://placeimg.com/320/240/any' />
+          <div>
+            <div
+              className={cx(s.keyframe, s.keyframe2, { [s.keyspin]: keyspin })}
+              onClick={() => this.handleClick('keyspin')}>
+              <img
+                width={320}
+                height={240}
+                src='https://placeimg.com/320/240/any' />
+            </div>
           </div>
         </section>
       </div>
