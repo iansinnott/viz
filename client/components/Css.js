@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 import s from './Css.styl';
 import { moji } from '../lib/utils.js';
@@ -8,7 +9,20 @@ import { moji } from '../lib/utils.js';
  * Having fun with CSS visualizations
  */
 export const Css = React.createClass({
+  getInitialState() {
+    return {
+      rotate: false,
+      scale: false,
+      keyspin: false,
+    };
+  },
+
+  handleClick(which) {
+    this.setState({ [which]: !this.state[which] });
+  },
+
   render() {
+    const { rotate, scale, keyspin } = this.state;
     return (
       <div className={s.Css}>
         <div className={s.heading}>
@@ -19,7 +33,42 @@ export const Css = React.createClass({
           </p>
         </div>
         <section>
-          Todo...
+          <h3>Dem transitions doe...</h3>
+          <div
+            className={cx(s.showHide, { [s.rotateHidden]: rotate })}
+            onClick={() => this.handleClick('rotate')}>
+            <img
+              width={320}
+              height={240}
+              src='https://placeimg.com/320/240/any' />
+          </div>
+          <div
+            className={cx(s.showHide, { [s.scaleHidden]: scale })}
+            onClick={() => this.handleClick('scale')}>
+            <img
+              width={320}
+              height={240}
+              src='https://placeimg.com/320/240/any' />
+          </div>
+        </section>
+        <section>
+          <h3>Dem keyframes doe...</h3>
+          <div
+            className={cx(s.keyframe, { [s.keyspin]: keyspin })}
+            onClick={() => this.handleClick('keyspin')}>
+            <img
+              width={320}
+              height={240}
+              src='https://placeimg.com/320/240/any' />
+          </div>
+          <div
+            className={cx(s.keyframe, { [s.keyspin]: keyspin })}
+            onClick={() => this.handleClick('keyspin')}>
+            <img
+              width={320}
+              height={240}
+              src='https://placeimg.com/320/240/any' />
+          </div>
         </section>
       </div>
     );
