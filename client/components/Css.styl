@@ -94,3 +94,57 @@
       animation-name spinhouse2
       animation-duration 1.5s
       animation-direction alternate
+
+// Timer
+@keyframes rota
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)
+
+
+@keyframes fill
+  from
+    opacity 0
+  50%, to
+    opacity 1
+
+@keyframes mask
+  from
+    opacity 1
+  50%, to
+    opacity 0
+
+.timer
+  position relative
+  background blue
+  width 200px
+  height 200px
+
+pie()
+  width 50%
+  height 100%
+  position absolute
+  background green
+  border 10px solid pink
+
+.filler
+  pie()
+  left 50%
+  border-radius 0 100px 100px 0
+  border-left none
+  animation fill 10s steps(1, end) infinite
+
+.spinner
+  pie()
+  border-radius 100px 0 0 100px
+  border-right none
+  animation rota 10s linear infinite
+
+.mask
+  position relative
+  width 50%
+  height 100%
+  background inherit
+  z-index 3
+  animation mask 10s steps(1, end) infinite

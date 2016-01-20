@@ -33,6 +33,14 @@ export const Css = React.createClass({
           </p>
         </div>
         <section>
+          <h3>Timer</h3>
+          <div className={cx(s.timer)} onClick={() => this.handleClick('rotate')}>
+            <div className={s.spinner} />
+            <div className={s.filler} />
+            <div className={s.mask} />
+          </div>
+        </section>
+        <section>
           <h3>Dem transitions doe...</h3>
           <div
             className={cx(s.showHide, { [s.rotateHidden]: rotate })}
